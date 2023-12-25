@@ -81,13 +81,39 @@ class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    const findMin = node => {
+      if (!node) {
+        return null;
+      }
+
+      if (!node.left) {
+        return node.data;
+      }
+
+      if (node.left) {
+        return findMin(node.left);
+      }
+    }
+
+    return findMin(this.rootNode);
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    const findMax = node => {
+      if (!node) {
+        return null;
+      }
+  
+      if (!node.right) {
+        return node.data;
+      }
+
+      if (node.right) {
+        return findMax(node.right);
+      }
+    }
+
+    return findMax(this.rootNode);
   }
 }
 
